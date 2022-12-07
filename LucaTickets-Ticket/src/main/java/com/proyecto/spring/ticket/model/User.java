@@ -1,24 +1,25 @@
 package com.proyecto.spring.ticket.model;
 
+import java.sql.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-@Data
 @Entity
-public class Ticket {
-	
+@Data
+public class User {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private long id;
-	private User idUser;
-	private Event idEvent;
-	private double precio;
-	
+	private Long id;
+	private String nombre;	
+	private String apellido;
+	private String mail;
+	private String pass;
+	private Date fecha_alta;
 }
