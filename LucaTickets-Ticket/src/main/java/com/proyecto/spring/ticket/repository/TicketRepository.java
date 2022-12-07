@@ -1,5 +1,10 @@
 package com.proyecto.spring.ticket.repository;
 
-public interface TicketRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.proyecto.spring.ticket.model.Ticket;
+
+
+public interface TicketRepository extends JpaRepository<Ticket, Long> {
 
 }
