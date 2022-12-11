@@ -1,6 +1,7 @@
 package com.proyecto.spring.ticket.model.response;
 
 import java.io.Serializable;
+import java.util.List;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,6 @@ public class TicketResponse implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private long id;
-	private User user;
-	private Event event;
-	private double price;
+	private User User;
+	private List<Event> Event;
 }

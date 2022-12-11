@@ -9,5 +9,5 @@ import com.proyecto.spring.ticket.model.response.User;
 @FeignClient(name = "user", url= "http://localhost:8888")
 public interface UserFeignClient {
 	@GetMapping("/user/{id}")
-    public User getEventById(@PathVariable long id);
+    public User getUserById(@PathVariable long id);
 }
