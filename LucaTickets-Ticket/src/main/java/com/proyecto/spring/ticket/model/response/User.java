@@ -1,11 +1,9 @@
-package com.proyecto.spring.ticket.model;
+package com.proyecto.spring.ticket.model.response;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,10 +11,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Data
-public class User {
-	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private Long id;
+public class User implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+
 	private String nombre;	
 	private String apellido;
 	private String mail;

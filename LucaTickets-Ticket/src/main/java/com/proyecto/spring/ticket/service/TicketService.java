@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.proyecto.spring.ticket.model.Ticket;
+import com.proyecto.spring.ticket.model.response.Event;
+import com.proyecto.spring.ticket.model.response.User;
 import com.proyecto.spring.ticket.repository.TicketRepository;
 
 @Service
@@ -12,7 +14,11 @@ public class TicketService {
 	@Autowired
 	TicketRepository repository;
 	
-	public Ticket comprarTicket(Ticket ticket) {
+	public Ticket comprarTicket(User user, Event event) {
+		Ticket ticket = new Ticket();
+		
+		ticket.setIdUser(user);
+		
 		return repository.save(ticket);
 	}
 }

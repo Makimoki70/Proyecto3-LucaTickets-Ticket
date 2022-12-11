@@ -1,4 +1,4 @@
-package com.proyecto.spring.ticket.model;
+package com.proyecto.spring.ticket.model.response;
 
 import lombok.Data;
 import lombok.Getter;
