@@ -18,5 +18,4 @@ private static final long serialVersionUID = 1L;
 	private LocalTime hora, minimo, maximo;
 	private Double precio;
 	private Recinto sala;
-	
 }

@@ -3,6 +3,8 @@ package com.proyecto.spring.ticket.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.proyecto.spring.feigns.EventFeignClient;
+import com.proyecto.spring.feigns.UserFeignClient;
 import com.proyecto.spring.ticket.model.Ticket;
 import com.proyecto.spring.ticket.model.response.Event;
 import com.proyecto.spring.ticket.model.response.User;
@@ -13,6 +15,12 @@ public class TicketService {
 	
 	@Autowired
 	TicketRepository repository;
+	
+	@Autowired
+	private UserFeignClient userFeign;
+	
+	@Autowired
+	private EventFeignClient eventFeign;
 	
 	public Ticket comprarTicket(User user, Event event) {
 		Ticket ticket = new Ticket();

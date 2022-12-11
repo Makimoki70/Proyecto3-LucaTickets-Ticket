@@ -1,5 +1,7 @@
 package com.proyecto.spring.ticket.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,9 +21,8 @@ public class Ticket {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private long id;
-	private User idUser;
-	private Event idEvent;
+	private Long id;
+	private Long idUser;
+	private List<Long> idEvent;
 	private double price;
-	
 }
