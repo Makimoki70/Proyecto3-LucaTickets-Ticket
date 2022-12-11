@@ -6,6 +6,9 @@ import javax.persistence.GenerationType;
 
 import org.springframework.data.annotation.Id;
 
+import com.proyecto.spring.ticket.model.response.Event;
+import com.proyecto.spring.ticket.model.response.User;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,6 +22,6 @@ public class Ticket {
 	private long id;
 	private User idUser;
 	private Event idEvent;
-	private double precio;
+	private double price;
 	
 }

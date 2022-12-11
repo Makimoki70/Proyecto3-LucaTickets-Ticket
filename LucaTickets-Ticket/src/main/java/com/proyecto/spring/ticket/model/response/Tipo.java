@@ -1,4 +1,4 @@
-package com.proyecto.spring.ticket.model;
+package com.proyecto.spring.ticket.model.response;
 
 public enum Tipo {
 	terraza("terraza"), interior("interior"), jardin("jardin");

@@ -20,6 +20,6 @@ public class TicketController {
 	
 	@PostMapping("/add")
 	public ResponseEntity<Ticket> addEvent(@RequestBody Ticket ticket){
-		return ResponseEntity.of(Optional.of(ticketService.comprarTicket(ticket)));
+		return ResponseEntity.of(Optional.of(ticketService.comprarTicket(ticket.getIdUser(), ticket.getIdEvent())));
 	}
 }

@@ -1,28 +1,22 @@
-package com.proyecto.spring.ticket.model;
+package com.proyecto.spring.ticket.model.response;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
-
-import javax.persistence.Entity;
-
-import org.springframework.data.annotation.Id;
-
-import com.proyecto.spring.ticket.model.Event;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @Data
-@Entity
-public class Event{
+public class Event implements Serializable {
 
-	@Id
-	public Long id;
+private static final long serialVersionUID = 1L;
 	
 	private String nombre, corta, extendida, foto, normas;
 	private LocalDate fecha;
 	private LocalTime hora, minimo, maximo;
 	private Double precio;
 	private Recinto sala;
+	
 }
