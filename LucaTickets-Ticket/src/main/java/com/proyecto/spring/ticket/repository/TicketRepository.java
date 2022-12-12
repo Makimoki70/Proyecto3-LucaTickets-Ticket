@@ -9,6 +9,9 @@ import com.proyecto.spring.ticket.model.Ticket;
 
 
 public interface TicketRepository extends JpaRepository<Ticket, Long> {
-	@Query("Select * from ticket where idUser = ?0")
+	@Query("FROM ticket WHERE iduser = ?1")
 	public List<Ticket> findList(long idUser);
+	
+	@Query("SELECT DISTINCT iduser FROM ticket")
+	public List<Long> getDistinctIds();
 }
