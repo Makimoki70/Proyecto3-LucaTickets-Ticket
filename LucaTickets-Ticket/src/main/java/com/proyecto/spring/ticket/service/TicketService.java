@@ -37,7 +37,7 @@ public class TicketService {
 		//Hacer cosas con el mensaje
 		
 		
-		//boolean userExists = userFeign.getUserById(idUser);
+		
 		Ticket ticket = new Ticket();
 		
 		ticket.setId(id);
