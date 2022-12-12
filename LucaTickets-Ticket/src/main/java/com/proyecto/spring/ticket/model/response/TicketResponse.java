@@ -13,7 +13,6 @@ public class TicketResponse implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private long id;
-	private long idUser;
-	private List<Event> idEvent;
-	private Message idMessage;
+	private User User;
+	private List<Event> Event;
 }
