@@ -7,12 +7,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+//import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.proyecto.spring.ticket.model.Ticket;
+//import com.proyecto.spring.ticket.model.Ticket;
 import com.proyecto.spring.ticket.model.response.TicketResponse;
 import com.proyecto.spring.ticket.service.TicketService;
 
@@ -22,9 +22,9 @@ public class TicketController {
 	@Autowired
 	TicketService ticketService;
 	
-	@PostMapping("/{id}/add")
-	public ResponseEntity<Ticket> addEvent(@PathVariable Long id, @RequestParam Long idEvent, @RequestParam(defaultValue = "1") Integer qt){
-		return ResponseEntity.of(Optional.of(ticketService.comprarTicket(id, idEvent, qt)));
+	@PostMapping("/{idUser}/add")
+	public void addEvent(@PathVariable long idUser, @RequestParam long idEvent, @RequestParam(defaultValue = "1") Integer qt){
+		ticketService.comprarTicket(idUser, idEvent, qt);
 	}
 	
 	@GetMapping("/{id}")
