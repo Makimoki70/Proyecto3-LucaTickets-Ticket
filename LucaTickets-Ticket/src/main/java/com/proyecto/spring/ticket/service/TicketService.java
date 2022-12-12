@@ -22,7 +22,6 @@ public class TicketService {
 	
 	@Autowired
 	TicketRepository repository;
-	
 
 	@Autowired
 	private UserFeignClient userFeign;
@@ -33,14 +32,21 @@ public class TicketService {
 	@Autowired
 	private MessageFeignClient messageFeign;
 	
-	public Ticket comprarTicket(Long id, Long idUser, List<Long> idEvent) { //Fijarse en service de 19d - addproduct. poner para que cree un Ticket
+	public Ticket comprarTicket(Long id, Long idEvent, int qt) { //Fijarse en service de 19d - addproduct. poner para que cree un Ticket
 		Message message = messageFeign.getMessage();
 		//Hacer cosas con el mensaje
+		
+		
+		//boolean userExists = userFeign.getUserById(idUser);
 		Ticket ticket = new Ticket();
 		
 		ticket.setId(id);
-		ticket.setIdUser(idUser);
-		ticket.setIdEvent(idEvent);
+		ticket.setIdUser(id);
+		List<Long> eventsQt = new ArrayList<>();
+		for(int i = 0; i<qt; i++) {
+			eventsQt.add(idEvent);
+		}
+		ticket.setIdEvent(eventsQt);
 		
 		return repository.save(ticket);
 	}
